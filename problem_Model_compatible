@@ -4,3 +4,10 @@
 "speaker_embedding": false
 ⚠️请注意 “speech_encoder” 行后有一个英文逗号，而 “speaker_embedding” 后没有英文逗号。
 如果不清楚自己的模型是Vec256还是Vec768，可以查看配置文件中的 “gin_channels” 和 “ssl_dim” 项来确认。
+
+Model compatibility modification: Open the corresponding configuration file of the model in the configs folder with a text editor, find the "n_speakers" item, add a comma (",") at the end of this line, and then add two new lines:
+
+"speech_encoder": "vec256l9", // If it is a Vec768 model, this item is changed to "vec768l12"
+"speaker_embedding": false
+⚠️ Note that the "speech_encoder" line is followed by a comma, while the "speaker_embedding" is followed by no comma.
+If you are not sure whether your model is Vec256 or Vec768, you can check the "gin_channels" and "ssl_dim" items in the configuration file to confirm.
