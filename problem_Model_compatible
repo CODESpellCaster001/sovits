@@ -1,0 +1,6 @@
+模型兼容性修改：在configs文件夹内用文本编辑器打开模型的对应配置文件，找到 “n_speakers” 项，在这一行最后添加一个英文逗号(“,”)，然后添加新的两行：
+
+"speech_encoder": "vec256l9",  //如果是Vec768模型，这一项改为"vec768l12"
+"speaker_embedding": false
+⚠️请注意 “speech_encoder” 行后有一个英文逗号，而 “speaker_embedding” 后没有英文逗号。
+如果不清楚自己的模型是Vec256还是Vec768，可以查看配置文件中的 “gin_channels” 和 “ssl_dim” 项来确认。
